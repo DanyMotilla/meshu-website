@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meshu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');body{font-family:'IBM Plex Mono',monospace;}</style>
+</head>
+<body class="bg-white text-zinc-900 max-w-lg mx-auto px-6 py-10">
+
+    <div class="flex items-center gap-3 mb-8">
+        <span class="text-3xl">(•⩊•)</span>
+        <h1 class="text-4xl tracking-tighter">meshu</h1>
+    </div>
+
+    <div class="border border-amber-300 bg-amber-50 p-3 text-xs mb-8">
+        Early Development • Solo Project
+    </div>
+
+    <h2 class="text-4xl leading-none tracking-tighter mb-10">
+        watermarks hidden in 3D geometry
+    </h2>
+
+    <div class="border border-zinc-300 p-6 mb-8">
+        <input id="key" type="text" class="w-full border border-zinc-300 p-3 mb-4 text-sm" placeholder="license key">
+        
+        <div class="border border-dashed border-zinc-400 h-24 flex items-center justify-center text-xs mb-4 cursor-pointer hover:border-black">
+            drop .obj here
+        </div>
+        
+        <textarea id="msg" rows="3" class="w-full border border-zinc-300 p-3 mb-6 text-sm" placeholder="secret message..."></textarea>
+        
+        <button onclick="embed()" class="w-full border border-black py-4 hover:bg-black hover:text-white text-sm">
+            EMBED WATERMARK
+        </button>
+    </div>
+
+    <div class="text-center text-xs">
+        <a href="https://ko-fi.com/" target="_blank" class="block border border-black py-4 hover:bg-black hover:text-white mb-6">
+            BUY LICENSE ON KO-FI →
+        </a>
+        <p>Want to help? <a href="mailto:danielmotilla@proton.me" class="underline">danielmotilla@proton.me</a></p>
+    </div>
+
+    <script>
+        function embed(){
+            if(!document.getElementById('key').value.trim()){
+                alert("Enter license key");
+                return;
+            }
+            const btn = document.querySelector('button');
+            btn.textContent="embedding...";
+            btn.disabled=true;
+            setTimeout(()=>{alert("✅ Done!\n(•⩊•) Secret hidden");btn.textContent="EMBED WATERMARK";btn.disabled=false;},900);
+        }
+    </script>
+</body>
+</html>
